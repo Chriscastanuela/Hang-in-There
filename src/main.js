@@ -26,6 +26,8 @@ var takeMeBack = document.querySelector('.show-main') // Nevermind take me back 
 var imageUrlInputField = document.querySelector('#poster-image-url') //Image Url Input Field
 var imageTitleInputField = document.querySelector('#poster-title') //Image title input Field
 var imageQuoteInputField = document.querySelector('#poster-quote') // Image quote input Field
+// Saved Posters article
+var savedPostersGrid = document.querySelector('saved-posters-grid')
 
 
 
@@ -142,6 +144,9 @@ showSavedPostersButton.addEventListener('click', showSavedFunction);
 backToMain.addEventListener('click', backtoMainFunction);
 // Custom Poster
 makePoster.addEventListener('click', customPoster);
+// Save a poster
+saveAPosterButton.addEventListener('click', savePoster);
+
 
 
 // ************************************************ functions and event handlers 👇
@@ -156,7 +161,6 @@ function showAnotherRandom() {
   posterTitle.innerText = titles[getRandomIndex(titles)];
   posterQuote.innerText = quotes[getRandomIndex(quotes)]
 }
-
 ////// Switchng Pages
 function showPosterForm() {
   event.preventDefault()
@@ -192,18 +196,33 @@ function posterToCurrent(savedPosterObject) {
   posterTitle.innerText = savedPosterObject.title;
   posterQuote.innerText = savedPosterObject.quote;
 }
-
+function expandArrays(savedPosterObject) {
+  images.push(savedPosterObject.imageURL);
+  titles.push(savedPosterObject.title);
+  quotes.push(savedPosterObject.quote);
+}
 // custom poster
 function customPoster(ev){
   ev.preventDefault()
-  var customPoster = {
-    imageURL: imageUrlInputField.value,
-    title: imageTitleInputField.value,
-    quote: imageQuoteInputField.value
-  }
+  var customPoster = new Poster(imageUrlInputField.value, imageTitleInputField.value, imageQuoteInputField.value)
+  expandArrays(customPoster);
   posterToCurrent(customPoster);
   takeMeBackFunction()
 }
+// save current posters
+  function savePoster(){
+  var newSavedPoster = new Poster(posterImage.src, posterTitle.innerText, posterQuote.innerText);
+  for (var i=0;i<savedPosterArray.length;i++) {
+    if (newSavedPoster.imageURL === savedPosterArray[i].imageURL
+      && newSavedPoster.title === savedPosterArray[i].title
+      && newSavedPoster.quote === savedPosterArray[i].quote) {
+      alert('Poster is a duplicate. Poster not saved')
+      return
+      }
+    }
+    savedPosterArray.push(newSavedPoster)
+    alert('Poster Saved')
+  }
 
 // ************************************************ code 👇
 
