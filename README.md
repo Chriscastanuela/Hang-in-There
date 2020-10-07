@@ -4,8 +4,6 @@
 # Hang in There
 > A js project by Chris Castenuela and Caleb Cyphers
 
-[Link to Deployed Site](https://chriscastanuela.github.io/Tic-Tac-Toe/)
-
 # Contents 
 
 * [About](#about)
