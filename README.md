@@ -1,4 +1,4 @@
-[Link to deployed site](https://chriscastanuela.github.io/hang-in-there-boilerplate/)
+[Link to deployed site](https://chriscastanuela.github.io/Hang-in-There/)
 
 <a name="mainContents"></a>
 # Hang in There
