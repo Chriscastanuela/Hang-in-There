@@ -4,6 +4,8 @@
 # Hang in There
 > A js project by Chris Castenuela and Caleb Cyphers
 
+<img width="1392" alt="Hang-In-There" src="https://user-images.githubusercontent.com/62910433/95284092-834d8680-081a-11eb-8b48-debbc7662a21.png">
+
 # Contents 
 
 * [About](#about)
