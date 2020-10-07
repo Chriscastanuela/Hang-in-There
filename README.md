@@ -20,7 +20,7 @@
     <li>The Hang in There Project is paired partner project that consists of taking existing data in the form of arrays and using the data to generate random motivational posters. The user can also save any poster, create posters, and view their saved poster thumbnails</li>
 </ul>
 
-### Links to the Authors
+# Links to the Authors
 
 <a name="ltta"></a>
 
